@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1="Here are all the latest posts:"
+  each status in statuses
+    div
+    blockquote.blockquote
+      p
+      |#{status.status}
+      footer
+        |-#{status.username}
+        cite(title='Source Title') #{status.timestamp.toDateString()}
+    
+          

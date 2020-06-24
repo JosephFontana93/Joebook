@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= "Welcome back " 
+   |#{user}
+  p= "Bio:"
+    | #{bio}
+  form(action='/account', method='post')
+    label(for='newbio') Update your bio:
+    br
+    input#newbio(type='text', name='newbio', value='')
+    input(type='submit', value='Submit')
+  p= "Post a new status so others can see:"
+  form(action='/statuses', method='post')
+    label(for='status') Status:
+    br
+    input#status(type='text', name='status', value='New post...')
+    input(type='submit', value='Submit')
+  
+  
